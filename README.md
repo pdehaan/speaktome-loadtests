@@ -21,3 +21,10 @@ $ pip install -r requirements.txt
 
 $ python test.py
 ```
+
+## Testing (CLI):
+
+```sh
+$ curl -H "Content-Type: application/octet-stream" --data-binary @clips/1.opus https://speaktome.stage.mozaws.net/asr
+> {"status":"ok","data":[{"confidence":0.91162,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN"},{"confidence":0.915788,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN EIGHT"},{"confidence":0.914959,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN SIX"},{"confidence":0.91876,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN A M"},{"confidence":0.918655,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN P M"},{"confidence":0.914386,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN THREE"},{"confidence":0.918332,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN EIGHT EIGHT"},{"confidence":0.913997,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN PM"},{"confidence":0.913682,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN PLEASE"},{"confidence":0.913729,"text":"ONE TWO THREE FOUR FIVE SIX SEVEN DAYS"}]}
+```
