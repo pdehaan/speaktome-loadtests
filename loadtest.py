@@ -21,7 +21,8 @@ def post_opus(filename):
     except:
         print("huh?")
 
-res = post_opus('tmp/test5.opus')
+
+res = post_opus('clips/1.opus')
 print(res['status'])
 
 # curl -H "Content-Type: application/octet-stream" --data-binary @tmp/test$i.opus https://speaktome.stage.mozaws.net/asr
