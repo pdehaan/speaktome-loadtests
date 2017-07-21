@@ -1,5 +1,7 @@
 # speaktome-loadtests
 
+[![](https://pbs.twimg.com/profile_images/2596464442/datadoglogo_normal.png)](https://app.datadoghq.com/dash/326388/speaktome?live=true&page=0&is_auto=false&from_ts=1500647464879&to_ts=1500661864879&tile_size=m&tpl_var_env=stage)
+
 Load tests for https://github.com/mozilla/speaktome
 
 ## Sample data:
