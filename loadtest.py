@@ -1,21 +1,21 @@
-import json
+# import json
 import os
-import requests
+import molotov
 
-url = '{0}/asr'.format(os.environ['URL_SERVER'])
+_FILENAME = 'clips/speech_orig.opus'
+
+url_server = url_server = os.getenv('URL_SERVER', 'https://speaktome.stage.mozaws.net').rstrip('/')
+url = url_server + '/asr'
 print(url)
 
 
-def post_opus(filename):
-    file = open(filename, 'rb').read()
-    headers = {'Content-Type': 'application/octet-stream'}
+@molotov.scenario()
+async def upload_file(session):
+    headers = {'Content-Type': 'audio/opus'}
 
-    res = requests.post(url, data=file, headers=headers)
-    data = json.loads(res.text)
-    assert res.status_code < 400
-    assert data['status'] == 'ok'
-    return data
-
-
-res = post_opus('./clips/1.opus')
-print(res['status'])
+    with open(_FILENAME, 'rb') as file:
+        async with session.post(url, data=file, headers=headers) as res:
+            assert res.status < 400
+            data = await res.json()
+            assert data['status'] == 'ok'
+            return data

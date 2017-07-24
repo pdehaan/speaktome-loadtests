@@ -2,7 +2,7 @@
 
 [![](https://pbs.twimg.com/profile_images/2596464442/datadoglogo_normal.png)](https://app.datadoghq.com/dash/326388/speaktome?live=true&page=0&is_auto=false&from_ts=1500647464879&to_ts=1500661864879&tile_size=m&tpl_var_env=stage)
 
-Load tests for https://github.com/mozilla/speaktome
+Load tests for https://github.com/mozilla/speaktome and https://github.com/mozilla/speech-proxy
 
 ## Sample data:
 
@@ -11,7 +11,7 @@ To create some sample OPUS files, run `./record.sh` to record some 4 second clip
 ## Requirements:
 
 Python 3+
-requests
+molotov
 virtualenv
 
 ## Setup:
@@ -21,7 +21,7 @@ $ virtualenv venv -p python3
 $ source ./venv/bin/activate
 $ pip install -r requirements.txt
 
-$ python test.py
+$ tox -e osx
 ```
 
 ## Testing (CLI):
