@@ -1,5 +1,7 @@
 import os
 import molotov
+import datetime
+
 
 _FILENAME = 'clips/speech_orig.opus'
 
@@ -16,10 +18,11 @@ async def upload_file(session):
     headers = {'Content-Type': 'audio/opus'}
 
     with open(_FILENAME, 'rb') as file:
+        starttime = datetime.datetime.now()
         async with session.post(url, data=file, headers=headers) as res:
-            print(res.status)
             data = await res.json()
-            # print(data)
+            endtime = datetime.datetime.now()
+            # print(endtime - starttime)
             assert res.status == 200
             assert data['status'] == 'ok'
             return data
