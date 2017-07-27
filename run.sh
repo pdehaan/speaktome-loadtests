@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-readonly DURATION=120
-readonly PROCESSES=( 2 12 22 32 42 )
-readonly WORKERS=( 1 )
+readonly DURATION=500
+readonly PROCESSES=( 30 36 42 48 54 )
+readonly WORKERS=( 3 )
 
 for p in "${PROCESSES[@]}"
 do

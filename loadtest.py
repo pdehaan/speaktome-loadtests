@@ -8,9 +8,9 @@ _FILENAME = 'clips/speech_orig.opus'
 PROD_SERVER = 'https://speaktome.services.mozilla.com'
 STAGE_SERVER = 'https://speaktome.stage.mozaws.net'
 
-url_server = os.getenv('URL_SERVER', STAGE_SERVER).rstrip('/')
+url_server = os.getenv('URL_SERVER', PROD_SERVER).rstrip('/')
 url = url_server + '/asr'
-print(url)
+print('<<<' + url + '>>>')
 
 
 @molotov.scenario()
