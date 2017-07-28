@@ -13,4 +13,4 @@ WORKDIR /molotov
 ADD . /molotov
 
 # run the test
-CMD tox -e docker
+CMD tox -e linux 
